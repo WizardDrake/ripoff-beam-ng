@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="ripoff beamNG"
-run/main_scene="res://scenes/car_line.tscn"
+run/main_scene="res://title_screen.tscn"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+W4GD="*uid://csarv8spq6sol"
 
 [editor_plugins]
 
