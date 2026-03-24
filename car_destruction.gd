@@ -1,4 +1,5 @@
 extends Node3D
+class_name CarDestruction
 
 ## Pre-loaded physics-based progressive car destruction.
 ##
@@ -155,12 +156,15 @@ func _physics_process(delta: float) -> void:
 		body.global_transform = car_xform * part.local_xform
 
 
+func is_engine_exploded() -> bool:
+	return _engine_exploded
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	if not _car or not is_instance_valid(_car):
 		return
-	if event.is_action_pressed("destroy_car"):
-		var front := _car.global_transform * Vector3(0, 0, -0.5)
-		_handle_impact(front, 20.0, 5)
+	if event.is_action_pressed("destroy_car") and not _engine_exploded:
+		_explode_entire_car()
 
 
 func _on_car_body_entered(_body: Node) -> void:
