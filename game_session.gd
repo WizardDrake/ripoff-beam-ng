@@ -18,3 +18,25 @@ func get_ws_url() -> String:
 	if ProjectSettings.has_setting("multiplayer/ws_url"):
 		return ProjectSettings.get_setting("multiplayer/ws_url")
 	return "ws://127.0.0.1:8787"
+
+
+func get_supabase_url() -> String:
+	if ProjectSettings.has_setting("multiplayer/supabase_url"):
+		return String(ProjectSettings.get_setting("multiplayer/supabase_url")).strip_edges()
+	return ""
+
+
+func get_supabase_anon_key() -> String:
+	if ProjectSettings.has_setting("multiplayer/supabase_anon_key"):
+		return String(ProjectSettings.get_setting("multiplayer/supabase_anon_key")).strip_edges()
+	return ""
+
+
+func uses_supabase_multiplayer() -> bool:
+	return not get_supabase_url().is_empty() and not get_supabase_anon_key().is_empty()
+
+
+func supabase_room_channel() -> String:
+	if public_room:
+		return "mp_public"
+	return "mp_pr_%d" % clampi(private_room_number, 1, 100)

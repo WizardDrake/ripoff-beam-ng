@@ -1,3 +1,50 @@
-# Godot 4+ specific ignores
+# Godot 4 specific
 .godot/
+.import/
+
+# Imported assets (auto-generated)
+*.import
+
+# Exported builds
+/export/
+build/
+bin/
+
+# Android build stuff
 /android/
+
+# Mono / C# (if you ever use it)
+.mono/
+data_*/
+
+# Editor-specific
+.editor/
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Backup files
+*~
+*.bak
+
+# LFS (optional safety if you use large assets)
+*.psd
+*.blend
+*.fbx
+*.glb
+*.obj
+*.png
+*.jpg
+*.wav
+*.ogg
+*.mp4
+
+# Node (since you have a multiplayer_server)
+node_modules/
+npm-debug.log
+.env
+
+# Docker (optional)
+*.env

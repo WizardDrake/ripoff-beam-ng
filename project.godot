@@ -21,10 +21,6 @@ W4GD="*uid://csarv8spq6sol"
 GameSession="*res://game_session.gd"
 MultiplayerSync="*res://multiplayer_sync.gd"
 
-[multiplayer]
-
-ws_url="ws://127.0.0.1:8787"
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/destruction/plugin.cfg")
@@ -103,6 +99,12 @@ respawn={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"location":0,"echo":false,"script":null)
 ]
 }
+
+[multiplayer]
+
+ws_url="ws://127.0.0.1:8787"
+supabase_url="https://zgulojdlyuveloruhblk.supabase.co"
+supabase_anon_key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpndWxvamRseXV2ZWxvcnVoYmxrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQzOTYwODUsImV4cCI6MjA4OTk3MjA4NX0.Wt53CDbd8FQkO8u4r6qWruyoAmLpQNiHlMpaLisaEN8"
 
 [physics]
 
